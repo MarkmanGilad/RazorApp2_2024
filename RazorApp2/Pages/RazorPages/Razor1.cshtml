@@ -1,0 +1,29 @@
+﻿@page
+@model RazorApp2.Pages.RazorPages.Razor1Model
+@{
+    ViewData["Title"] = "Razor1";
+}
+<h1>@ViewData["Title"]</h1>
+
+<div>
+    <h2>The current time is @DateTime.Now</h2>
+</div>
+
+<h2>@Model.Str</h2>
+<div>
+    @{
+        for (int i = 0; i < 10; i++)
+        {
+            if (i % 2 == 0)
+            {
+                <div style="color:red">@i</div>
+            }
+            else
+            {
+                <div style="color:blue">@(i * 2)</div>
+            }
+
+        }
+        <div style="background-color:aquamarine">The end</div>
+    }
+</div>
