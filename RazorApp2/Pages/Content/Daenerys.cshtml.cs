@@ -5,8 +5,13 @@ namespace RazorApp2.Pages.Content
 {
     public class DaenerysModel : PageModel
     {
-        public void OnGet()
+        public IActionResult OnGet()
         {
+            if (string.IsNullOrEmpty(HttpContext.Session.GetString("Login")))
+            {
+                return RedirectToPage("/AccessDenied");
+            }
+            return Page();
         }
     }
 }

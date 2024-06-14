@@ -6,14 +6,25 @@ namespace RazorApp2.Pages.Users
 {
     public class RegisterModel : PageModel
     {
-        public User User { get; set; }
+        [BindProperty]
+        public User NewUser { get; set; }
+        public string msg { get; set; } = string.Empty;
+
         public void OnGet()
         {
             
         }
-        public void OnPost()
+        public IActionResult OnPost()
         {
+            Helper helper = new Helper();
+            int n = helper.Insert(NewUser, "Users");
+            if (n == -1)
+            {
+                msg = "Username already taken.";
+                return Page();
+            }
 
+            return RedirectToPage("Index");
         }
     }
 }

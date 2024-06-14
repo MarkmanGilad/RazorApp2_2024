@@ -1,7 +1,20 @@
 var builder = WebApplication.CreateBuilder(args);
 
+// Set the DataDirectory to the App_Data folder
+var dataDirectory = Path.Combine(builder.Environment.ContentRootPath, "App_Data");
+AppDomain.CurrentDomain.SetData("DataDirectory", dataDirectory);
+
 // Add services to the container.
 builder.Services.AddRazorPages();
+
+// Add Session service
+builder.Services.AddDistributedMemoryCache();
+builder.Services.AddSession(options =>
+{
+    options.IdleTimeout = TimeSpan.FromSeconds(10);
+    options.Cookie.HttpOnly = true;
+    options.Cookie.IsEssential = true;
+});
 
 var app = builder.Build();
 
@@ -19,6 +32,9 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.UseAuthorization();
+
+// Add Session service
+app.UseSession();
 
 app.MapRazorPages();
 

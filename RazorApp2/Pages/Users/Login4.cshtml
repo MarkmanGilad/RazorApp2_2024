@@ -1,23 +1,24 @@
 ﻿@page
-@model RazorApp2.Pages.Users.LoginModel
+@model RazorApp2.Pages.Users.Login4Model
 @{
-    ViewData["Title"] = "Login";
+    ViewData["Title"] = "Login4";
 }
+
 
 <div class="row justify-content-center align-items-center" style="height:75vh">
     <div class="col-sm-10 col-md-8 col-lg-6 col-xl-4">
         <div class="card h-100">
-            <div class="card-header"><h1>Login</h1></div>
+            <div class="card-header"><h1>Login 4</h1></div>
             <div class="card-body">
                 <form method="post">
                     <div class="mb-3">
-                        <label for="Username" class="form-label">Username</label>
-                        <input type="text" class="form-control" id="Username" name="Username">
+                        <label asp-for="Username" class="form-label">Username</label>
+                        <input asp-for="Username" class="form-control">
                         <div id="UsernameHelp" class="form-text">Enter you username.</div>
                     </div>
                     <div class="mb-3">
-                        <label for="password" class="form-label">Password</label>
-                        <input type="password" class="form-control ms-auto" id="password" name="password">
+                        <label asp-for="password" class="form-label">Password</label>
+                        <input asp-for="password" class="form-control ms-auto">
                         <div id="PasswordHelp" class="form-text">Enter a valid password.</div>
                     </div>
                     <div class="mb-3 form-text text-danger">
