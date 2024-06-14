@@ -1,10 +1,10 @@
 ﻿@page
-@model RazorApp2.Pages.Users.RegisterModel
+@model RazorApp2.Pages.Users.UpdateModel
 @{
-    ViewData["Title"] = "Register";
+    ViewData["Title"] = "Update";
 }
 
-<h1>Register</h1>
+<h1>Update</h1>
 
 <h4>User</h4>
 <hr />
@@ -12,6 +12,10 @@
     <div class="col-md-4">
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="NewUser.ID" class="control-label"></label>
+                <input asp-for="NewUser.ID" class="form-control" readonly />
+            </div>
             <div class="form-group">
                 <label asp-for="NewUser.FirstName" class="control-label"></label>
                 <input asp-for="NewUser.FirstName" class="form-control" />
@@ -40,7 +44,11 @@
                 <label asp-for="NewUser.Birthday" class="control-label"></label>
                 <input asp-for="NewUser.Birthday" class="form-control" />
             </div>
-            @if(Model.msg != "")
+            <div class="form-group">
+                <label asp-for="NewUser.Admin" class="control-label"></label>
+                <input type="checkbox" asp-for="NewUser.Admin" />
+            </div>
+            @if (Model.msg != "")
             {
                 <div class="form-group">
                     <div class="alert alert-danger" role="alert">
@@ -48,12 +56,13 @@
                     </div>
                 </div>
             }
-            
+
 
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Update" class="btn btn-primary" />
             </div>
         </form>
+        
     </div>
 </div>
 

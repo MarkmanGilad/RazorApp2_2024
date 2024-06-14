@@ -18,6 +18,7 @@ namespace RazorApp2.Pages.Users
             if (userName == "Gilad" && password == "1968")
             {
                 HttpContext.Session.SetString("Login", userName);
+                HttpContext.Session.SetString("Admin", "True");
                 return RedirectToPage("/Index");
             }
             msg = "Wrong username or password.";
