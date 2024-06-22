@@ -20,7 +20,7 @@ namespace RazorApp2.Model
 
         public DataTable RetrieveTable(string SQLStr, string table)
         // Gets A table from the data base acording to the SELECT Command in SQLStr;
-        // Returns DataSet with the Table.
+        // Returns DataTable with the Table.
         {
             // connect to DataBase
             SqlConnection con = new SqlConnection(conString);
@@ -109,28 +109,16 @@ namespace RazorApp2.Model
             return n;
         }
 
-        public string Update(User user, string table)
+        public int Update(User user, string table)
         {
-            Helper helper = new Helper();
-
             string SQL = $"UPDATE {table} " +
                 $"SET Username='{user.Username}', Password = '{user.Password}', " +
                 $"FirstName  = '{user.FirstName}', LastName = '{user.LastName}', " +
                 $"Email = '{user.Email}', Phone = '{user.Phone}',  Admin = '{user.Admin}', " +
                 $"Birthday = '{user.Birthday:MM-dd-yyyy HH:mm:ss}' " +
                 $"WHERE Id = {user.ID}";
-            int n;
-            string msg = "";
-            try
-            {
-                n = ExecuteNonQuery(SQL);
-            }
-            catch (Exception ex)
-            {
-                msg = ex.Message;
-            }
-
-            return msg;
+            int n = ExecuteNonQuery(SQL); 
+            return n;
         }
     
     }

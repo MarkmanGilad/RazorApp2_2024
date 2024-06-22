@@ -11,6 +11,5 @@
         public string Phone { get; set; } = string.Empty;
         public DateTime Birthday { get; set; } 
         public bool Admin { get; set; }
-
     }
 }

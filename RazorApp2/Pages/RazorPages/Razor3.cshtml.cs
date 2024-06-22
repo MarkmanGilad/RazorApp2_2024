@@ -3,12 +3,12 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace RazorApp2.Pages.RazorPages
 {
-    public class Razor1Model : PageModel
+    public class Razor3Model : PageModel
     {
-
         public void OnGet()
         {
-            
+            ViewData["Msg"] = "This is a message";
+            ViewData["Number"] = 5;
         }
     }
 }

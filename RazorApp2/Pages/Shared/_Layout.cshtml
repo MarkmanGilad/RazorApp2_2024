@@ -31,7 +31,7 @@
                             <a class="nav-link text-dark" asp-area="" asp-page="/RazorPages/Index">Razor Pages</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Users/Login">Login</a>
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Users/Login_SQL">Login</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/Users/Register">Register</a>
@@ -41,25 +41,13 @@
                         </li>
                     </ul>
                     
-                    
-                    
-                    @* <span class="navbar-text">
-                        @if (string.IsNullOrEmpty(sessionValue))
-                        {
-                            @Html.Raw("Wellcome Visitor");
-                        }
-                        else
-                        {
-                            @Html.Raw("Wellcome ") @sessionValue;
-                        }
-                    </span> *@
                     @if (string.IsNullOrEmpty(sessionValue))
                     {
-                        <span class="navbar-text">wellcome Visitor</span>
+                        <span class="navbar-text">welcome Visitor</span>
                     }
                     else
                     {
-                        <span class="navbar-text">wellcome @sessionValue</span>
+                        <span class="navbar-text">welcome @sessionValue</span>
                         <div class="d-flex">
                             <a class="btn btn-outline-dark btn-sm ms-1" href="/Users/Logout" role="button">Logout</a>
                         </div>

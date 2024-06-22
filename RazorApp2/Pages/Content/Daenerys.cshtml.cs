@@ -12,7 +12,6 @@ namespace RazorApp2.Pages.Content
                 return RedirectToPage("/AccessDenied");
             }
             return Page();
-
         }
     }
 }

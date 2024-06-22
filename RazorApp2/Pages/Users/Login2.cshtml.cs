@@ -9,10 +9,8 @@ namespace RazorApp2.Pages.Users
         public void OnGet()
         {
         }
-        
         public IActionResult OnPost(string Username, string password)
         {           
-
             if (Username == "Gilad" && password == "1968")
             {
                 HttpContext.Session.SetString("Login", Username);

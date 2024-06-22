@@ -12,12 +12,10 @@ namespace RazorApp2.Pages.Users
         }
         public IActionResult OnPost() 
         {
-            string userName = Request.Form["Username"];
-            string password = Request.Form["password"];
             
-            if (userName == "Gilad" && password == "1968")
+            if (Request.Form["Username"] == "Gilad" && Request.Form["password"] == "1968")
             {
-                HttpContext.Session.SetString("Login", userName);
+                HttpContext.Session.SetString("Login", Request.Form["Username"]);
                 HttpContext.Session.SetString("Admin", "True");
                 return RedirectToPage("/Index");
             }

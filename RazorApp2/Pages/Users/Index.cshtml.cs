@@ -21,10 +21,10 @@ namespace RazorApp2.Pages.Users
 
         public IActionResult OnGet()
         {
-            //if (HttpContext.Session.GetString("Admin") != "True")
-            //{
-            //    return RedirectToPage("/AccessDenied");
-            //}
+            if (HttpContext.Session.GetString("Admin") != "True")
+            {
+                return RedirectToPage("/AccessDenied");
+            }
             Helper helper = new Helper();
             string SQL = "SELECT * FROM Users";
             dt = helper.RetrieveTable(SQL, "Users");

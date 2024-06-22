@@ -14,7 +14,6 @@ namespace RazorApp2.Pages.Users
         public void OnGet()
         {
         }
-        
         public IActionResult OnPost()
         {
             if (Username == "Gilad" && password == "1968")

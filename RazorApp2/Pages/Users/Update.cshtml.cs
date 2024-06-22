@@ -37,11 +37,16 @@ namespace RazorApp2.Pages.Users
         public IActionResult OnPost()
         {
             Helper helper = new Helper();
-            msg = helper.Update(NewUser, "Users");
-            if (msg =="")
-                return RedirectToPage("Index");
-            return Page();
-
+            try
+            {
+                int n = helper.Update(NewUser, "Users");
+            }
+            catch (Exception ex)
+            {
+                msg = ex.Message;
+                return Page();
+            }
+            return RedirectToPage("Index");
         }
     }
 }
