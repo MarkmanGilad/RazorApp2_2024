@@ -46,7 +46,6 @@ namespace RazorApp2.Pages.Users
             dt = helper.RetrieveTable(SQL, "Users");
             return Page();
         }
-
         public IActionResult OnPostSort()
         {
             Helper helper = new Helper();
@@ -55,16 +54,6 @@ namespace RazorApp2.Pages.Users
             return Page();
         }
         public IActionResult OnPostDelete()
-        {
-            Helper helper = new Helper();
-            helper.Delete(Id, "Users");
-            string SQL = "SELECT * FROM Users";
-            dt = helper.RetrieveTable(SQL, "Users");
-            return Page();
-            
-        }
-
-        public IActionResult OnGetUpdate(string param)
         {
             Helper helper = new Helper();
             helper.Delete(Id, "Users");
