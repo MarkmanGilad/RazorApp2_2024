@@ -121,5 +121,82 @@ namespace RazorApp2.Model
             return n;
         }
     
+        public int Update_disconnected (User user, string table)
+        {
+            // The Method recieve a user objects and update its fields it to the Database . 
+            // The method return the number of rows affected (1) if it succeded.
+            // if the id of the user is not in the databse it will return -1
+
+            // התחברות למסד הנתונים
+            SqlConnection con = new SqlConnection(conString);
+
+            // בניית פקודת SQL
+            string SQLStr = $"SELECT * FROM {table} WHERE Id = {user.ID}";
+            SqlCommand cmd = new SqlCommand(SQLStr, con);
+
+            // בניית DataSet
+            DataSet ds = new DataSet();
+
+            // טעינת סכימת הנתונים
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            adapter.Fill(ds, table);
+
+            if (ds.Tables[table].Rows.Count != 1)
+            {
+                return -1;
+            }
+
+            // קבלת מצביע לשורה בטבלה
+            DataRow dr = ds.Tables[table].Rows[0]; //Get the only row available
+            
+            // עדכון השורה
+            dr["Firstname"] = user.FirstName;
+            dr["Lastname"] = user.LastName;
+            dr["Username"] = user.Username;
+            dr["Password"] = user.Password;
+            dr["Email"] = user.Email;
+            dr["Phone"] = user.Phone;
+            dr["Birthday"] = user.Birthday.ToString();
+            dr["Admin"] = user.Admin;
+            
+            // עדכון הדאטה סט בבסיס הנתונים
+            SqlCommandBuilder builder = new SqlCommandBuilder(adapter);
+            int n = adapter.Update(ds, table);
+            return n;
+        }
+
+        public int Delete_disconnected(int id, string table)
+        {
+            // The Method recieve an Id and delete it from the user table.
+            // The method return the number of rows affected (1) if it succeded.
+            // if the id of the user is not in the databse it will return -1
+
+            // התחברות למסד הנתונים
+            SqlConnection con = new SqlConnection(conString);
+
+            // בניית פקודת SQL
+            string SQLStr = $"SELECT * FROM {table} WHERE Id = {id}";
+            SqlCommand cmd = new SqlCommand(SQLStr, con);
+
+            // בניית DataSet
+            DataSet ds = new DataSet();
+
+            // טעינת סכימת הנתונים
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            adapter.Fill(ds, table);
+
+            if (ds.Tables[table].Rows.Count == 0)
+            {
+                return -1;
+            }
+
+            // מחיקת השורה
+            ds.Tables[table].Rows[0].Delete(); 
+
+            // עדכון הדאטה סט בבסיס הנתונים
+            SqlCommandBuilder builder = new SqlCommandBuilder(adapter);
+            int n = adapter.Update(ds, table);
+            return n;
+        }
     }
 }
