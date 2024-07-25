@@ -1,0 +1,11 @@
+﻿@page
+@model RazorApp2.Pages.RazorPages.RazorModel
+@{
+    ViewData["Title"]="This is my Title";
+}
+<form method="post" action="OnPost2">
+    @Html.AntiForgeryToken() 
+    <input type="text" name="txt" />
+    <input type="submit" value="submit" />
+
+</form>

@@ -6,7 +6,7 @@ namespace RazorApp2.Pages.Users
     public class Login3Model : PageModel
     {
         public string msg { get; set; } = string.Empty;
-        
+
         [BindProperty]
         public string Username { get; set; }
         
@@ -15,6 +15,7 @@ namespace RazorApp2.Pages.Users
 
         public void OnGet()
         {
+            Username = "After Get";
         }
         public IActionResult OnPost()
         {
@@ -22,6 +23,8 @@ namespace RazorApp2.Pages.Users
             {
                 HttpContext.Session.SetString("Login", Username);
                 HttpContext.Session.SetString("Admin", "True");
+                //Username = "After Post";
+                //return Page();
                 return RedirectToPage("/Index");
             }
             msg = "Wrong username or password.";

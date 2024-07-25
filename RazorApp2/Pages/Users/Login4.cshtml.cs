@@ -9,14 +9,15 @@ namespace RazorApp2.Pages.Users
         [BindProperty]
         public string Username { get; set; }
         [BindProperty]
-        public string password { get; set; }
+        public string Password { get; set; }
 
         public void OnGet()
         {
+            //Username = "After Get";
         }
         public IActionResult OnPost()
         {
-            if (Username == "Gilad" && password == "1968")
+            if (Username == "Gilad" && Password == "1968")
             {
                 HttpContext.Session.SetString("Login", Username);
                 HttpContext.Session.SetString("Admin", "True");

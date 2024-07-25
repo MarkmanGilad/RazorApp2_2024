@@ -14,7 +14,7 @@ namespace RazorApp2.Pages
 
         public void OnGet()
         {
-
+            
         }
     }
 }

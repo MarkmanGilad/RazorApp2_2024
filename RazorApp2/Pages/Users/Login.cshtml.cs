@@ -6,14 +6,14 @@ namespace RazorApp2.Pages.Users
 {
     public class LoginModel : PageModel
     {
-        public string msg { get; set; } = string.Empty;
+        public string msg { get; set; } ="";
         public void OnGet()
         {
         }
         public IActionResult OnPost() 
         {
-            
-            if (Request.Form["Username"] == "Gilad" && Request.Form["password"] == "1968")
+            if (Request.Form["Username"] == "Gilad" && Request.Form["password"] == "1968" ||
+                Request.Form["Username"] == "Yoav" && Request.Form["password"] == "1234")
             {
                 HttpContext.Session.SetString("Login", Request.Form["Username"]);
                 HttpContext.Session.SetString("Admin", "True");

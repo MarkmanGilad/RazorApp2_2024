@@ -4,6 +4,16 @@
     ViewData["Title"] = "Razor3";
 }
 <h1>@ViewData["Title"]</h1>
+
 <h3 class="alert-primary">@ViewData["Msg"]</h3>
+<h3>@ViewData["Number"]+1</h3>
 <h3>@((int)ViewData["Number"]+1)</h3>
+<h3>
+    @{
+        foreach (int i in (int[])ViewData["array"])
+        {
+            <h4>@i</h4>
+        }
+    }
+</h3>
 

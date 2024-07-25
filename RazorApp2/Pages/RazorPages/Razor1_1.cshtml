@@ -1,0 +1,34 @@
+﻿@page
+@model RazorApp2.Pages.RazorPages.Razor1_1Model
+@{
+}
+<h1>Razor syntax 1_1</h1>
+@{
+    string tag = "<div> Hello World!</div>";
+    string txt = "Hello world text";
+}
+@tag
+@Html.Raw(tag)
+<h1>@txt</h1>
+<div>
+    @{
+        for (int i = 0; i < 3; i++)
+        {
+            <h1>
+                i @i 
+                @{
+                    string str = "Hi " + i;
+                    for(int j=0; j < 2; j++)
+                    {
+                        <h5><span>@j</span><span>str @str</span></h5>
+                    }
+                }
+            </h1>
+        }
+        <div style="background-color:aquamarine">The end</div>
+        @Html.Raw("<h1>This is a way to write tags and text</h1>")
+    }
+@{
+    <h1>i</h1>
+}
+</div>

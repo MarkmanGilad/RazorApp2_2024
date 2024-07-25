@@ -7,7 +7,8 @@ namespace RazorApp2.Pages.Content
     {
         public IActionResult OnGet()
         {
-            if (string.IsNullOrEmpty(HttpContext.Session.GetString("Login")))
+            string login = HttpContext.Session.GetString("Login");
+            if (string.IsNullOrEmpty(login))
             {
                 return RedirectToPage("/AccessDenied");
             }

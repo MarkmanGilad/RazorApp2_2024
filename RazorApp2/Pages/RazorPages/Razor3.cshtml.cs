@@ -9,6 +9,8 @@ namespace RazorApp2.Pages.RazorPages
         {
             ViewData["Msg"] = "This is a message";
             ViewData["Number"] = 5;
+            ViewData["array"] = new int [] {1,2,3};
         }
+
     }
 }
