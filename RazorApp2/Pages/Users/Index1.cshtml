@@ -11,6 +11,7 @@
         <tr>
             @foreach (DataColumn column in Model.dt.Columns)
             {
+                int i = 1;
                 <th>@column.ColumnName</th>
             }
         </tr>
@@ -21,7 +22,17 @@
             <tr>
                 @foreach (DataColumn column in Model.dt.Columns)
                 {
-                    <td>@row[column]</td>
+                    if(column.ColumnName != "Birthday")
+                    {
+                        <td>@row[column]</td>
+                    }
+                    else
+                    {
+                        <td>@((DateTime)row[column]).ToString("dd/MM/YYYY"))</td>
+                    }
+                        
+
+                    
                 }
             </tr>
         }

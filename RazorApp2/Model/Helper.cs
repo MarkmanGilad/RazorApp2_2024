@@ -6,7 +6,7 @@ namespace RazorApp2.Model
 {
     public class Helper
     {
-        private string conString;
+        private string conString = "connection string";
 
         public Helper()
         {
