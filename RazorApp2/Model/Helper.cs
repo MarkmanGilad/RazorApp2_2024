@@ -126,6 +126,7 @@ namespace RazorApp2.Model
             // The Method recieve a user objects and update its fields it to the Database . 
             // The method return the number of rows affected (1) if it succeded.
             // if the id of the user is not in the databse it will return -1
+            // The student should add validation check that the username is not taken by another Id.
 
             // התחברות למסד הנתונים
             SqlConnection con = new SqlConnection(conString);

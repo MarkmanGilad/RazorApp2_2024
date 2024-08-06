@@ -22,7 +22,7 @@ namespace RazorApp2.Pages.Users
                 msg = "Username already taken.";
                 return Page();
             }
-            return RedirectToPage("Index");
+            return RedirectToPage("Login_SQL");
         }
     }
 }
