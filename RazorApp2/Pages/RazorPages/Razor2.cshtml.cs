@@ -5,13 +5,13 @@ namespace RazorApp2.Pages.RazorPages
 {
     public class Razor2Model : PageModel
     {
-        public string Str { get; set; } = string.Empty;
+        public string Str { get; set; } = "";
         public string User { get; set; } = string.Empty;
 
         public void OnGet()
         {
-            Str = "Gilad Markman from Backend";
-            User = "Gilad";
+            this.Str = "Gilad Markman from Backend";
+            User = "Gilad1";
         }
         public string printText()
         {

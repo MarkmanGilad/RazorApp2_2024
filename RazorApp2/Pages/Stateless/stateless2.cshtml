@@ -1,0 +1,21 @@
+﻿@page
+@model RazorApp2.Pages.Stateless.stateless2Model
+@{
+    ViewData["Title"] = "Stateless2";
+}
+<div class="row justify-content-center align-items-center" style="height:75vh">
+    <div class="col-sm-10 col-md-8 col-lg-6 col-xl-4">
+        <div class="card h-100">
+            <div class="card-header"><h1>Stateless 2</h1></div>
+            <div class="card-body">
+                <form method="post">
+                    <div class="mb-3">
+                        <label for="counter" class="form-label">counter</label>
+                        <input type="text" class="form-control" id="counter" name="counter" value=@Model.counter>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Add</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

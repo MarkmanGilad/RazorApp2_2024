@@ -36,6 +36,7 @@ namespace RazorApp2.Model
 
             // Get Data form DataBase into the DataSet
             ad.Fill(ds, table);
+            
 
             return ds.Tables[table];
         }
@@ -72,7 +73,8 @@ namespace RazorApp2.Model
             dr["Email"] = user.Email;
             dr["Phone"] = user.Phone;
             dr["Birthday"] = user.Birthday.ToString();
-
+            dr["Admin"] = false;
+            
             ds.Tables[table].Rows.Add(dr);
 
             // עדכון הדאטה סט בבסיס הנתונים
@@ -142,7 +144,7 @@ namespace RazorApp2.Model
             SqlDataAdapter adapter = new SqlDataAdapter(cmd);
             adapter.Fill(ds, table);
 
-            if (ds.Tables[table].Rows.Count != 1)
+            if (ds.Tables[table].Rows.Count == 0)
             {
                 return -1;
             }
@@ -186,12 +188,20 @@ namespace RazorApp2.Model
             SqlDataAdapter adapter = new SqlDataAdapter(cmd);
             adapter.Fill(ds, table);
 
-            if (ds.Tables[table].Rows.Count == 0)
-            {
-                return -1;
-            }
+            //if (ds.Tables[table].Rows.Count == 0)
+            //{
+            //    return -1;
+            //}
 
-            // מחיקת השורה
+            //// מחיקת השורה
+            //for (int i= 0; i < ds.Tables[table].Rows.Count; i++)
+            //{
+            //    ds.Tables[table].Rows[i].Delete();
+            //}
+            //foreach (DataRow dr in ds.Tables[table].Rows)
+            //{
+            //    dr.Delete();
+            //}
             ds.Tables[table].Rows[0].Delete();
 
             // עדכון הדאטה סט בבסיס הנתונים

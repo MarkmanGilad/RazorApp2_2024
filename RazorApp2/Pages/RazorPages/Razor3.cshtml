@@ -10,9 +10,10 @@
 <h3>@((int)ViewData["Number"]+1)</h3>
 <h3>
     @{
-        foreach (int i in (int[])ViewData["array"])
+        int[] arr = (int[])ViewData["array"];
+        for (int i= 0; i < arr.Length; i++ )
         {
-            <h4>@i</h4>
+            <h4>@arr[i]</h4>
         }
     }
 </h3>

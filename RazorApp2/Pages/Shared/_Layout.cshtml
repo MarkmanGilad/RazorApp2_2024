@@ -30,6 +30,18 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/RazorPages/Index">Razor Pages</a>
                         </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link text-dark dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Stateless Programing
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item text-dark" href="/Stateless/stateless1">Stateless 1</a></li>
+                                <li><a class="dropdown-item text-dark" href="/Stateless/stateless2">Stateless 2</a></li>
+                                <li><a class="dropdown-item text-dark" href="/Stateless/stateless3">Stateless 3</a></li>
+                                <li><a class="dropdown-item text-dark" href="/Stateless/stateless4">Stateless 4</a></li>
+                                
+                            </ul>
+                        </li>
                         @if (string.IsNullOrEmpty(sessionValue))
                         {
                             <li class="nav-item">

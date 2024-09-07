@@ -2,8 +2,8 @@
 @model RazorApp2.Pages.RazorPages.OnPost2Model
 @{
 }
-<form method="post" >
-    @* @Html.AntiForgeryToken() *@
+<form method="post" action="Razor_OnPost" >
+    @Html.AntiForgeryToken()
     <input type="text" name="txt" />
     <input type="submit" value="submit" />
 

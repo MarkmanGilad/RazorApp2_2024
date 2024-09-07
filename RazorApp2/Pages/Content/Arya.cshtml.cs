@@ -5,8 +5,16 @@ namespace RazorApp2.Pages.Content
 {
     public class AryaModel : PageModel
     {
-        public void OnGet()
+        public IActionResult OnGet()
         {
+            return Redirect("/AccessDenied");
+            //return Page();
         }
+
+        public void OnPost() 
+        { 
+
+        }
+
     }
 }

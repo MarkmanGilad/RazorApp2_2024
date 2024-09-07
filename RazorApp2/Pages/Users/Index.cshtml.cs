@@ -63,5 +63,6 @@ namespace RazorApp2.Pages.Users
             dt = helper.RetrieveTable(SQL, "Users");
             return Page();
         }
+
     }
 }

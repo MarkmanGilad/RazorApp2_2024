@@ -12,7 +12,9 @@ namespace RazorApp2.Pages.Users
 
         public void OnGet()
         {
+            
         }
+        
         public IActionResult OnPost()
         {
             Helper helper = new Helper();
@@ -22,6 +24,7 @@ namespace RazorApp2.Pages.Users
                 msg = "Username already taken.";
                 return Page();
             }
+
             return RedirectToPage("Login_SQL");
         }
     }
