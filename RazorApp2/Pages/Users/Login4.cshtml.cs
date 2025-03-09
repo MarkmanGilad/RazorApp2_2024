@@ -17,10 +17,17 @@ namespace RazorApp2.Pages.Users
         }
         public IActionResult OnPost()
         {
-            if (Username == "Gilad" && Password == "1968")
+            if (Username == "Gilad" && Password == "1968" ||
+                Username == "Orly" && Password == "1234")
             {
                 HttpContext.Session.SetString("Login", Username);
                 HttpContext.Session.SetString("Admin", "True");
+                return RedirectToPage("/Index");
+            }
+            else if (Username == "Etay" && Password == "11111")
+            {
+                HttpContext.Session.SetString("Login", Username);
+                HttpContext.Session.SetString("Admin", "False");
                 return RedirectToPage("/Index");
             }
             msg = "Wrong username or password.";

@@ -7,8 +7,8 @@ namespace RazorApp2.Pages.Content
     {
         public IActionResult OnGet()
         {
-            return Redirect("/AccessDenied");
-            //return Page();
+            //return Redirect("/AccessDenied");
+            return Page();
         }
 
         public void OnPost() 

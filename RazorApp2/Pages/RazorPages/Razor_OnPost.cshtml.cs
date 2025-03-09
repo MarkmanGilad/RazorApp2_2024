@@ -7,6 +7,8 @@ namespace RazorApp2.Pages.RazorPages
     {
         public void OnGet()
         {
+            //return RedirectToPage("/Content/Arya");
+            //return Page();
         }
         public void OnPost()
         {

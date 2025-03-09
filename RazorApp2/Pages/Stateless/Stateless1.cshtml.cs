@@ -9,7 +9,6 @@ namespace RazorApp2.Pages.Stateless
 
         public void OnGet()
         {
-            counter = 0;
         }
         public void OnPost()
         {

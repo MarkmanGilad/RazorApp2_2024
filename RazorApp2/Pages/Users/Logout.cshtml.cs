@@ -9,6 +9,7 @@ namespace RazorApp2.Pages.Users
         {
             // Remove a specific session key
             //HttpContext.Session.Remove("Logout");
+
             // Clear the entire session
             HttpContext.Session.Clear();
 

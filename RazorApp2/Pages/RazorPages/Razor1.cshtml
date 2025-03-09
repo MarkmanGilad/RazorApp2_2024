@@ -1,6 +1,7 @@
 ﻿@page
 @model RazorApp2.Pages.RazorPages.Razor1Model
-@{   
+@{
+    ViewData["Title"] = "Razor Syndex";
 }
 <div>
     <h2>The current time is @DateTime.Now</h2>
@@ -15,7 +16,7 @@
             }
             else
             {
-                <div style="color:blue">@(i * 2)</div>
+                <div style="color:blue">@i</div>
             }
         }
         <div style="background-color:aquamarine">The end</div>

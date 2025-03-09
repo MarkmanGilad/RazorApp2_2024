@@ -1,6 +1,6 @@
 ﻿@using Microsoft.AspNetCore.Http
 @{
-    var sessionValue = Context.Session.GetString("Login");
+    string sessionValue = Context.Session.GetString("Login");
 }
 
 <!DOCTYPE html>
@@ -45,7 +45,10 @@
                         @if (string.IsNullOrEmpty(sessionValue))
                         {
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-page="/Users/Login_SQL">Login</a>
+                                <a class="nav-link text-dark" asp-area="" asp-page="/Users/Login_SQL">Login_SQL</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-page="/Users/Login4">Login</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-page="/Users/Register">Register</a>
